@@ -21,7 +21,7 @@ public class UpLoadController {
     UpLoadService upLoadService;
 
     @PostMapping("/upload")
-    @SystemLog(businessName = "上传文件")
+//    @SystemLog(businessName = "上传文件")
     public ResponseResult upLoadImg(MultipartFile img) {
         return upLoadService.upLoadOss(img);
     }

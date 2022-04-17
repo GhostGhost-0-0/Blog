@@ -2,11 +2,10 @@ package com.zzx.controller;
 
 import com.zzx.annotation.SystemLog;
 import com.zzx.domain.ResponseResult;
+import com.zzx.domain.entity.User;
 import com.zzx.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @program: SGBlog
@@ -25,5 +24,17 @@ public class UserController {
     @SystemLog(businessName = "获取用户信息")
     public ResponseResult userInfo() {
         return userService.userInfo();
+    }
+
+    @PutMapping("/userInfo")
+    @SystemLog(businessName = "修改用户个人信息")
+    public ResponseResult updateUserInfo(@RequestBody User user) {
+        return userService.updateUserInfo(user);
+    }
+
+    @PostMapping("/register")
+    @SystemLog(businessName = "注册")
+    public ResponseResult register (@RequestBody User user) {
+        return userService.register(user);
     }
 }
