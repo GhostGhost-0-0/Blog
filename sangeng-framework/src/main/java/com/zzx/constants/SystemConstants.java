@@ -22,4 +22,10 @@ public class SystemConstants {
     public static final String ARTICLE_COMMENT = "0";
     //类型为友链评论
     public static final String LINK_COMMENT = "1";
+    // 菜单 M
+    public static final String MENU = "M";
+    // 目录 C
+    public static final String CATALOGUE = "C";
+    // 按钮 F
+    public static final String BUTTON = "F";
 }
