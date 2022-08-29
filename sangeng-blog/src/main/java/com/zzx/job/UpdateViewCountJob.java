@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
  * @create: 2022-05-10 12:13
  **/
 @Component
-@EnableScheduling
 public class UpdateViewCountJob {
 
     @Autowired
