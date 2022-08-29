@@ -3,6 +3,8 @@ package com.zzx.controller;
 import com.zzx.annotation.SystemLog;
 import com.zzx.domain.ResponseResult;
 import com.zzx.domain.service.LinkService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/link")
+@Api(description = "友链相关接口")
 public class LinkController {
 
     @Autowired
@@ -23,6 +26,7 @@ public class LinkController {
 
     @GetMapping("/getAllLink")
     @SystemLog(businessName = "获取全部友链")
+    @ApiOperation(value = "友链", notes = "获取所有友链")
     public ResponseResult getAllLink() {
         return linkService.getAllLink();
     }

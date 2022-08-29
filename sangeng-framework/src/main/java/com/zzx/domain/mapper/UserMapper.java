@@ -7,7 +7,7 @@ import com.zzx.domain.entity.User;
 /**
  * 用户表(User)表数据库访问层
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-24 15:06:20
  */
 public interface UserMapper extends BaseMapper<User> {

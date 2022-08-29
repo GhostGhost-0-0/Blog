@@ -6,9 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zzx.constants.SystemConstants;
 import com.zzx.domain.ResponseResult;
 import com.zzx.domain.entity.Comment;
-import com.zzx.domain.entity.User;
 import com.zzx.domain.mapper.CommentMapper;
-import com.zzx.domain.mapper.UserMapper;
 import com.zzx.domain.service.CommentService;
 import com.zzx.domain.service.UserService;
 import com.zzx.domain.vo.CommentVo;
@@ -21,7 +19,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * 评论表(Comment)表服务实现类

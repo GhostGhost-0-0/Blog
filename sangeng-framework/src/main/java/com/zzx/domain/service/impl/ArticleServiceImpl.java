@@ -16,6 +16,7 @@ import com.zzx.domain.vo.HotArticleVo;
 import com.zzx.domain.vo.PageVo;
 import com.zzx.utils.BeanCopyUtils;
 import com.zzx.utils.RedisCache;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -7,7 +7,7 @@ import com.zzx.domain.entity.Comment;
 /**
  * 评论表(Comment)表数据库访问层
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-25 14:16:09
  */
 public interface CommentMapper extends BaseMapper<Comment> {
