@@ -2,6 +2,8 @@ package com.zzx.domain.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzx.domain.ResponseResult;
+import com.zzx.domain.dto.AddArticleDto;
+import com.zzx.domain.dto.ArticleListDto;
 import com.zzx.domain.entity.Article;
 
 /**
@@ -19,4 +21,13 @@ public interface ArticleService extends IService<Article> {
     ResponseResult getArticleDetail(Long id);
 
     ResponseResult updateViewCount(Long id);
+
+    ResponseResult selectArticleListPage(Integer pageNum, Integer pageSize, ArticleListDto articleListDto);
+
+    ResponseResult deleteArticleById(Long articleId);
+
+    ResponseResult addArticle(AddArticleDto addArticleDto);
+
+    ResponseResult updateArticle(AddArticleDto addArticleDto);
+
 }
