@@ -25,7 +25,7 @@ mybatis-plus:
       id-type: auto
 oss:
   qiniu:
-    domain: http://r8444s1ze.bkt.clouddn.com # 访问域名（默认使用七牛云测试域名）
+    domain: http://mcshuaib.cn # 访问域名（默认使用七牛云测试域名）
     accessKey: _DdDYiG3PYMAryzQ3dQ-3beQ3ll1yTicKk9eLzPP
     secretKey: VBFVlpaeDtm2ogrkASbleCpIVme3NBs94CMXVmkr
     bucketName: zzx-blog
