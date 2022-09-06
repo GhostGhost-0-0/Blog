@@ -24,7 +24,11 @@ public enum AppHttpCodeEnum {
     NICKNAME_NOT_NULL(509,"昵称不能为空"),
     PASSWORD_NOT_NULL(510,"密码不能为空"),
     EMAIL_NOT_NULL(511,"邮箱不能为空"),
-    NICKNAME_EXIST(512,"昵称已存在");
+    NICKNAME_EXIST(512,"昵称已存在"),
+    TAGNAME_NOT_NULL(513,"标签名不能为空"),
+    TAGNAME_EXIST(514, "标签已存在"),
+    LINK_EXIST(515,"友链已存在"),
+    CATEGORYNAME_EXIST(516,"分类已存在");
 
     int code;
     String msg;
