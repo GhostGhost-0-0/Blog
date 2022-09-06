@@ -30,13 +30,18 @@ public class WebUtils {
         }
     }
 
-    public static void setDownLoadHeader(String filename, ServletContext context, HttpServletResponse response) throws UnsupportedEncodingException {
-        String mimeType = context.getMimeType(filename);//获取文件的 mime 类型
-        response.setHeader("content-type", mimeType);
-        String fname = URLEncoder.encode(filename, "UTF-8");
-        response.setHeader("Content-disposition", "attachment; filename=" + fname);
-
-        //response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        //response.setCharacterEncoding("utf-8");
+    /**
+     * 设置下载请求头
+     * @param fileName
+     * @param response
+     * @throws UnsupportedEncodingException
+     */
+    public static void setDownLoadHeader(String fileName, HttpServletResponse response) throws UnsupportedEncodingException {
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        response.setCharacterEncoding("utf-8");
+        // 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系
+        String fName = URLEncoder.encode(fileName, "UTF-8").replaceAll("\\+", "%20");
+        response.setHeader("Content-disposition", "attachment; filename=" + fName);
     }
+
 }
