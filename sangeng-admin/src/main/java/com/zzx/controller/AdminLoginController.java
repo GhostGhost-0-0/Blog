@@ -16,6 +16,7 @@ import com.zzx.enums.AppHttpCodeEnum;
 import com.zzx.exception.SystemException;
 import com.zzx.utils.BeanCopyUtils;
 import com.zzx.utils.SecurityUtils;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -32,6 +33,7 @@ import java.util.List;
  * @Version: 1.0
  */
 @RestController
+@Api(description = "后台登录相关接口")
 public class AdminLoginController {
 
     @Autowired
@@ -82,5 +84,12 @@ public class AdminLoginController {
         // 查询 menu，结果是 tree 的形式
         List<Menu> menus = menuService.selectRouterMenuTreeByUserId(userId);
         return ResponseResult.okResult(new RoutersVo(menus));
+    }
+
+    @PostMapping("/user/logout")
+    @SystemLog(businessName = "退出登录")
+    @ApiOperation(value = "退出登录", notes = "用于后台用户退出登录")
+    public ResponseResult logout() {
+        return adminLoginService.logout();
     }
 }

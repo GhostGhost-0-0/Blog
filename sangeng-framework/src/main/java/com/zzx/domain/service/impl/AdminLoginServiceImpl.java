@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -56,6 +57,13 @@ public class AdminLoginServiceImpl implements AdminLoginService {
 
     @Override
     public ResponseResult logout() {
-        return null;
+        // 获取 token，解析获取 userId
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        // 获取 userId
+        LoginUser loginUser = (LoginUser) authentication.getPrincipal();
+        Long userId = loginUser.getUser().getId();
+        // 从 redis 中删除 blogAdminLogin 信息
+        redisCache.deleteObject("blogAdminLogin"+userId);
+        return ResponseResult.okResult();
     }
 }
