@@ -11,7 +11,7 @@ import com.zzx.domain.entity.Category;
 import com.zzx.domain.mapper.CategoryMapper;
 import com.zzx.domain.service.ArticleService;
 import com.zzx.domain.service.CategoryService;
-import com.zzx.domain.vo.CategoryAdminVo;
+import com.zzx.domain.vo.admin.CategoryAdminVo;
 import com.zzx.domain.vo.CategoryVo;
 import com.zzx.domain.vo.PageVo;
 import com.zzx.enums.AppHttpCodeEnum;

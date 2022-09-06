@@ -9,7 +9,7 @@ import com.zzx.domain.entity.Tag;
 import com.zzx.domain.mapper.TagMapper;
 import com.zzx.domain.service.TagService;
 import com.zzx.domain.vo.PageVo;
-import com.zzx.domain.vo.TagVo;
+import com.zzx.domain.vo.admin.TagVo;
 import com.zzx.enums.AppHttpCodeEnum;
 import com.zzx.exception.SystemException;
 import com.zzx.utils.BeanCopyUtils;
