@@ -20,6 +20,8 @@ public class SystemConstants {
     public static final int COMMENT_ROOT_ID = -1;
     //类型为文章评论
     public static final String ARTICLE_COMMENT = "0";
+    //状态为正常的分类
+    public static final String CATEGORY_STATUS_NORMAL = "0";
     //类型为友链评论
     public static final String LINK_COMMENT = "1";
     // 菜单 M
