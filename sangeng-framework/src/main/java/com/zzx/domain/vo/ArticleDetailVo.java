@@ -1,12 +1,11 @@
 package com.zzx.domain.vo;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @program: SGBlog
@@ -23,19 +22,23 @@ public class ArticleDetailVo {
     private String title;
     //文章内容
     private String content;
+    //摘要
+    private String summary;
+    //缩略图
+    private String thumbnail;
     //所属分类id
     private Long categoryId;
     //分类名称
-    @TableField(exist = false)
     private String categoryName;
+    //标签
+    private List<Long> tags;
     //访问量
     private Long viewCount;
     //是否允许评论 1是，0否
     private String isComment;
-
+    //是否置顶
+    private String isTop;
     private Date createTime;
 
-    //删除标志（0代表未删除，1代表已删除）
-    private Integer delFlag;
 
 }
