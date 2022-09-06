@@ -2,7 +2,9 @@ package com.zzx.domain.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzx.domain.ResponseResult;
+import com.zzx.domain.dto.CategoryListDto;
 import com.zzx.domain.entity.Category;
+
 
 
 /**
@@ -14,5 +16,18 @@ import com.zzx.domain.entity.Category;
 public interface CategoryService extends IService<Category> {
 
     ResponseResult getCategoryList();
+
+    ResponseResult selectCategoryListPage(Integer pageNum, Integer pageSize, CategoryListDto categoryListDto);
+
+    ResponseResult getCategoryDetail(Long categoryId);
+
+    ResponseResult addCategory(CategoryListDto categoryListDto);
+
+    ResponseResult updateCategory(CategoryListDto categoryListDto);
+
+    ResponseResult deleteCategory(Long categoryId);
+
+    ResponseResult getCategoryNormal();
+
 }
 
