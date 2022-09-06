@@ -1,5 +1,6 @@
-package com.zzx.domain.vo;
+package com.zzx.domain.vo.admin;
 
+import com.zzx.domain.vo.UserInfoVo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

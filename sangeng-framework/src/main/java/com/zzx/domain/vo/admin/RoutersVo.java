@@ -1,4 +1,4 @@
-package com.zzx.domain.vo;
+package com.zzx.domain.vo.admin;
 
 import com.zzx.domain.entity.Menu;
 import lombok.AllArgsConstructor;
