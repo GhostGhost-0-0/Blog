@@ -28,6 +28,6 @@ public class LinkController {
     @SystemLog(businessName = "获取全部友链")
     @ApiOperation(value = "友链", notes = "获取所有友链")
     public ResponseResult getAllLink() {
-        return linkService.getAllLink();
+        return linkService.getLinkList();
     }
 }
