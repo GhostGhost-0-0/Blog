@@ -18,6 +18,8 @@ import java.util.List;
 @AllArgsConstructor
 public class ArticleDetailVo {
 
+    //博文id
+    private Long id;
     //标题
     private String title;
     //文章内容

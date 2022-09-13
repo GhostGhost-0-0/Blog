@@ -35,8 +35,8 @@ public class ArticleController {
     @GetMapping("/{id}")
     @SystemLog(businessName = "博文信息")
     @ApiOperation(value = "获取博文信息", notes = "获取文章信息用于修改展示")
-    public ResponseResult getArticleDetail(@PathVariable("id") Long articleId) {
-        return articleService.getArticleDetail(articleId);
+    public ResponseResult getAdminArticleDetail(@PathVariable("id") Long articleId) {
+        return articleService.getAdminArticleDetail(articleId);
     }
 
     @DeleteMapping("/{id}")

@@ -24,6 +24,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -172,13 +173,44 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     }
 
     @Override
+    @Transactional
     public ResponseResult updateArticle(AddArticleDto addArticleDto) {
         Article article = BeanCopyUtils.copyBean(addArticleDto, Article.class);
         updateById(article);
+        LambdaQueryWrapper<ArticleTag> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(ArticleTag::getArticleId, article.getId());
         List<ArticleTag> articleTags = addArticleDto.getTags().stream()
                 .map(tagId -> new ArticleTag(article.getId(), tagId))
                 .collect(Collectors.toList());
-        articleTagService.updateBatchById(articleTags);
+        articleTagService.remove(queryWrapper);
+        articleTagService.saveBatch(articleTags);
         return ResponseResult.okResult();
+    }
+
+    @Override
+    public ResponseResult getAdminArticleDetail(Long articleId) {
+        //通过id查找博文
+        Article article = getById(articleId);
+        //通过id查找对应的标签信息
+        LambdaQueryWrapper<ArticleTag> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(ArticleTag::getArticleId, article.getId());
+        List<ArticleTag> articleTags = articleTagService.list(queryWrapper);
+        //将标签id收集到集合里
+        List<Long> tags = new ArrayList<>();
+        for (ArticleTag articleTag : articleTags) {
+            tags.add(articleTag.getTagId());
+        }
+        //转换vo
+        ArticleDetailVo articleDetailVo = BeanCopyUtils.copyBean(article, ArticleDetailVo.class);
+        //查询分类 id
+        Long categoryId = articleDetailVo.getCategoryId();
+        //根据分类 id 查询分类名称
+        Category category = categoryService.getById(categoryId);
+        if (category != null) {
+            articleDetailVo.setCategoryName(category.getName());
+        }
+        //将查出来的标签列表赋值给vo
+        articleDetailVo.setTags(tags);
+        return ResponseResult.okResult(articleDetailVo);
     }
 }
