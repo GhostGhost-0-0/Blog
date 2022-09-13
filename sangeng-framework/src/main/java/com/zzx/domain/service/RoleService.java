@@ -1,6 +1,8 @@
 package com.zzx.domain.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zzx.domain.ResponseResult;
+import com.zzx.domain.dto.RoleListDto;
 import com.zzx.domain.entity.Role;
 
 import java.util.List;
@@ -15,4 +17,8 @@ import java.util.List;
 public interface RoleService extends IService<Role> {
 
     List<String> selectRoleKeyByUserId(Long id);
+
+    ResponseResult selectRoleListPage(Integer pageNum, Integer pageSize, RoleListDto roleListDto);
+
+    ResponseResult getAllRoleList();
 }
