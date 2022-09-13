@@ -4,8 +4,12 @@ import com.zzx.domain.ResponseResult;
 import com.zzx.enums.AppHttpCodeEnum;
 import com.zzx.exception.SystemException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.HashMap;
 
 /**
  * @program: SGBlog
@@ -32,5 +36,19 @@ public class GlobalExceptionHandler {
         log.error("出现了异常！ {}", e);
         //从异常对象中获取提示信息封装返回
         return ResponseResult.errorResult(AppHttpCodeEnum.SYSTEM_ERROR, e.getMessage());
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseResult methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException e) {
+        log.error("数据校验出现问题{}，异常类型{}", e.getMessage(), e.getClass());
+        BindingResult bindingResult = e.getBindingResult();
+        HashMap<String, Object> errorMap = new HashMap<>();
+
+        bindingResult.getFieldErrors().forEach(item -> {
+            System.out.println(item);
+            errorMap.put(item.getField(), item.getDefaultMessage());
+        });
+
+        return ResponseResult.errorResult(errorMap);
     }
 }

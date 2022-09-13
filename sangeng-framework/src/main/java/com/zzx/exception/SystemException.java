@@ -26,4 +26,10 @@ public class SystemException extends RuntimeException{
         this.code = httpCodeEnum.getCode();
         this.message = httpCodeEnum.getMsg();
     }
+
+    public SystemException(int code, String message) {
+        super(message);
+        this.code = code;
+        this.message = message;
+    }
 }
