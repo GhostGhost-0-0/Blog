@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @BelongProject: SGBlog
@@ -30,4 +31,6 @@ public class AdminUserVo {
     private String phonenumber;
 
     private Date createTime;
+
+    private List<Long> roleIds;
 }
