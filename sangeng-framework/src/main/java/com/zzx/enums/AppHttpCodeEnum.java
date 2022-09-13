@@ -28,7 +28,8 @@ public enum AppHttpCodeEnum {
     TAGNAME_NOT_NULL(513,"标签名不能为空"),
     TAGNAME_EXIST(514, "标签已存在"),
     LINK_EXIST(515,"友链已存在"),
-    CATEGORYNAME_EXIST(516,"分类已存在");
+    CATEGORYNAME_EXIST(516,"分类已存在"),
+    VALID_ERROR(520,"参数校验失败");
 
     int code;
     String msg;
