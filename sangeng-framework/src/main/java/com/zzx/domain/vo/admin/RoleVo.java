@@ -29,7 +29,7 @@ public class RoleVo {
     private String roleKey;
 
     //角色显示顺序
-    private String roleSort;
+    private Integer roleSort;
 
     //角色状态（0正常，1停用）
     private String status;

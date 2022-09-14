@@ -2,6 +2,8 @@ package com.zzx.domain.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzx.domain.ResponseResult;
+import com.zzx.domain.dto.AddRoleDto;
+import com.zzx.domain.dto.ChangeRoleStatusDto;
 import com.zzx.domain.dto.RoleListDto;
 import com.zzx.domain.entity.Role;
 
@@ -21,4 +23,14 @@ public interface RoleService extends IService<Role> {
     ResponseResult selectRoleListPage(Integer pageNum, Integer pageSize, RoleListDto roleListDto);
 
     ResponseResult getAllRoleList();
+
+    ResponseResult getRoleDetail(Long roleId);
+
+    ResponseResult addRole(AddRoleDto roleDto);
+
+    ResponseResult deleteRoleById(Long roleId);
+
+    ResponseResult updateRole(AddRoleDto roleDto);
+
+    ResponseResult changeRoleStatus(ChangeRoleStatusDto changeRoleStatusDto);
 }
