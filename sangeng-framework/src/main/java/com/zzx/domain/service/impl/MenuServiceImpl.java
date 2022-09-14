@@ -7,16 +7,22 @@ import com.zzx.domain.ResponseResult;
 import com.zzx.domain.dto.AddMenuDto;
 import com.zzx.domain.dto.MenuListDto;
 import com.zzx.domain.entity.Menu;
+import com.zzx.domain.entity.RoleMenu;
 import com.zzx.domain.mapper.MenuMapper;
 import com.zzx.domain.service.MenuService;
+import com.zzx.domain.service.RoleMenuService;
+import com.zzx.domain.vo.admin.AddRoleMenuListVo;
 import com.zzx.domain.vo.admin.MenuListVo;
+import com.zzx.domain.vo.admin.UpdateRoleMenuListVo;
 import com.zzx.enums.AppHttpCodeEnum;
 import com.zzx.utils.BeanCopyUtils;
 import com.zzx.utils.SecurityUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,6 +34,9 @@ import java.util.stream.Collectors;
  */
 @Service("menuService")
 public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements MenuService {
+
+    @Autowired
+    private RoleMenuService roleMenuService;
 
     @Override
     public List<String> selectPermsByUserId(Long id) {
@@ -103,9 +112,49 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
         return ResponseResult.okResult();
     }
 
+
+
+    @Override
+    public ResponseResult treeSelect() {
+        LambdaQueryWrapper<Menu> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.orderByAsc(Menu::getOrderNum);
+        List<Menu> menus = list(queryWrapper);
+        for (Menu menu : menus) {
+            menu.setLabel(menu.getMenuName());
+        }
+        List<AddRoleMenuListVo> menuVos = BeanCopyUtils.copyBeanList(menus, AddRoleMenuListVo.class);
+
+        List<AddRoleMenuListVo> menuTree = buildRoleMenuTree(menuVos, 0);
+        return ResponseResult.okResult(menuTree);
+    }
+
+    @Override
+    public ResponseResult roleMenuTreeSelect(Long roleId) {
+        //通过角色 id 查询出该角色所对应的菜单权限
+        LambdaQueryWrapper<RoleMenu> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(RoleMenu::getRoleId, roleId);
+        List<RoleMenu> roleMenus = roleMenuService.list(queryWrapper);
+        //将对应的菜单权限的 id 放入集合中
+        List<Long> menuIds = new ArrayList<>();
+        for (RoleMenu roleMenu : roleMenus) {
+            menuIds.add(roleMenu.getMenuId());
+        }
+        //获取菜单树
+        ResponseResult result = treeSelect();
+        List<AddRoleMenuListVo> menuTree = (List<AddRoleMenuListVo>) result.getData();
+
+        return ResponseResult.okResult(new UpdateRoleMenuListVo(menuTree, menuIds));
+    }
+
     @Override
     @Transactional(rollbackFor = Exception.class)
     public ResponseResult deleteMenuById(Long menuId) {
+        LambdaQueryWrapper<Menu> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Menu::getParentId, menuId);
+        Menu menu = getOne(queryWrapper);
+        if (menu != null) {
+            return ResponseResult.errorResult(AppHttpCodeEnum.SYSTEM_ERROR, "存在子菜单不允许删除");
+        }
         removeById(menuId);
         return ResponseResult.okResult();
     }
@@ -122,6 +171,34 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
                 .map(menu -> menu.setChildren(getChildren(menu, menus)))
                 .collect(Collectors.toList());
         return menuVoTree;
+    }
+
+    /**
+     * 先找出一级菜单，也就是 parentId 为 0 的菜单，再找出它们的子菜单设置到一级菜单的 children 集合里去
+     * @param menus 转换后的菜单集合
+     * @param parentId 菜单的父 id
+     * @return
+     */
+    private List<AddRoleMenuListVo> buildRoleMenuTree(List<AddRoleMenuListVo> menus, long parentId) {
+        List<AddRoleMenuListVo> roleMenutree = menus.stream()
+                .filter(addRoleMenuListVo -> addRoleMenuListVo.getParentId().equals(parentId))
+                .map(addRoleMenuListVo -> addRoleMenuListVo.setChildren(getRoleMenuChildren(addRoleMenuListVo, menus)))
+                .collect(Collectors.toList());
+        return roleMenutree;
+    }
+
+    /**
+     * 获取存入参数的子菜单
+     * @param addRoleMenuListVo 通过父 id 筛选出来的菜单
+     * @param menus 转换后的菜单集合
+     * @return
+     */
+    private List<AddRoleMenuListVo> getRoleMenuChildren(AddRoleMenuListVo addRoleMenuListVo, List<AddRoleMenuListVo> menus) {
+        List<AddRoleMenuListVo> children = menus.stream()
+                .filter(m -> m.getParentId().equals(addRoleMenuListVo.getId()))
+                .map(m -> m.setChildren(getRoleMenuChildren(m, menus)))
+                .collect(Collectors.toList());
+        return children;
     }
 
     /**

@@ -59,10 +59,24 @@ public class MenuController {
         return menuService.updateMenu(updateMenuDto);
     }
 
-    @DeleteMapping("{/menuId}")
+    @DeleteMapping("/{id}")
     @SystemLog(businessName = "删除菜单")
     @ApiOperation(value = "删除菜单", notes = "删除菜单")
-    public ResponseResult deleteMenu(@PathVariable @NotNull Long menuId) {
+    public ResponseResult deleteMenu(@PathVariable("id") Long menuId) {
         return menuService.deleteMenuById(menuId);
+    }
+
+    @GetMapping("/treeSelect")
+    @SystemLog(businessName = "查询菜单下拉树结构")
+    @ApiOperation(value = "查询菜单下拉树结构", notes = "查询菜单下拉树结构")
+    public ResponseResult treeSelect() {
+        return menuService.treeSelect();
+    }
+
+    @GetMapping("/roleMenuTreeSelect/{id}")
+    @SystemLog(businessName = "根据角色ID查询菜单下拉树结构")
+    @ApiOperation(value = "根据角色ID查询菜单下拉树结构", notes = "根据角色ID查询菜单下拉树结构")
+    public ResponseResult roleMenuTreeSelect(@PathVariable("id") @NotNull Long roleId) {
+        return menuService.roleMenuTreeSelect(roleId);
     }
 }
