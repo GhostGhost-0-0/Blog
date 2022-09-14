@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 前台上传文件接口
  * @Author: 那个小楠瓜
  * @create: 2022-03-02 19:02
  **/

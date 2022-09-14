@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description JSON 配置
  * @Author: 那个小楠瓜
  * @create: 2022-02-24 16:51
  **/

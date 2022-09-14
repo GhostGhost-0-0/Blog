@@ -2,7 +2,7 @@ package com.zzx.enums;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 系统状态码
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 14:49
  **/

@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 统一结果返回
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 14:46
  **/

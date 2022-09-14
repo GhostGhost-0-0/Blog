@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 前台用户信息 vo
  * @Author: 那个小楠瓜
  * @create: 2022-02-24 17:19
  **/

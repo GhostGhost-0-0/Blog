@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 前台热门博文 vo
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 16:20
  **/

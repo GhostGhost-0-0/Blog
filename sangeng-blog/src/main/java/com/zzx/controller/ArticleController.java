@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 前台博文接口
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 14:07
  **/

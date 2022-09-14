@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description Bean的拷贝工具类
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 16:33
  **/

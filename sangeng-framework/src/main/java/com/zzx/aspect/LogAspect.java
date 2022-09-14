@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 日志切面
  * @Author: 那个小楠瓜
  * @create: 2022-03-16 13:31
  **/

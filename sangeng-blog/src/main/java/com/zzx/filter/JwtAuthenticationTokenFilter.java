@@ -24,7 +24,7 @@ import java.util.Objects;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 认证过滤器
  * @Author: 那个小楠瓜
  * @create: 2022-02-24 22:48
  **/

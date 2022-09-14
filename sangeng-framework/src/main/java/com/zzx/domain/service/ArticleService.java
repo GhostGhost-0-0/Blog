@@ -8,7 +8,7 @@ import com.zzx.domain.entity.Article;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 博文业务
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 14:02
  **/

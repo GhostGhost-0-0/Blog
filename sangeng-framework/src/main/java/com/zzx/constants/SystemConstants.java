@@ -2,7 +2,7 @@ package com.zzx.constants;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 系统常量
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 16:31
  **/

@@ -2,7 +2,6 @@ package com.zzx.domain.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zzx.domain.ResponseResult;
@@ -33,13 +32,12 @@ import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
  * 用户表(User)表服务实现类
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-24 15:06:20
  */
 @Service("userService")

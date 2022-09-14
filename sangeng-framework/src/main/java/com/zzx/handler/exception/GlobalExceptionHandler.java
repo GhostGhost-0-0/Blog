@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 全局异常拦截
  * @Author: 那个小楠瓜
  * @create: 2022-02-25 13:15
  **/

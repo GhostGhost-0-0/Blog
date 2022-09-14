@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 /**
  * 分类表(Category)表实体类
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-23 18:32:59
  */
 @SuppressWarnings("serial")

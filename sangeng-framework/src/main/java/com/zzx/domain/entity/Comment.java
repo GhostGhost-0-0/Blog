@@ -2,7 +2,6 @@ package com.zzx.domain.entity;
 
 import java.util.Date;
 
-import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -14,7 +13,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 /**
  * 评论表(Comment)表实体类
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-25 14:16:09
  */
 @SuppressWarnings("serial")

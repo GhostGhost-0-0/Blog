@@ -6,7 +6,7 @@ import java.util.UUID;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 路径工具类
  * @Author: 那个小楠瓜
  * @create: 2022-03-02 18:46
  **/

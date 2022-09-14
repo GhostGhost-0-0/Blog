@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 七牛云配置
  * @Author: 那个小楠瓜
  * @create: 2022-03-02 18:36
  **/

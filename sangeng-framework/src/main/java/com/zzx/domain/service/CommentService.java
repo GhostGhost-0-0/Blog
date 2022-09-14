@@ -8,7 +8,7 @@ import com.zzx.domain.entity.Comment;
 /**
  * 评论表(Comment)表服务接口
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-25 14:16:09
  */
 public interface CommentService extends IService<Comment> {

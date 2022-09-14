@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description redis 工具类
  * @Author: 那个小楠瓜
  * @create: 2022-02-24 16:06
  **/

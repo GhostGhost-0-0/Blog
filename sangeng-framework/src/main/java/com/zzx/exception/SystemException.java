@@ -4,7 +4,7 @@ import com.zzx.enums.AppHttpCodeEnum;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 自定义系统异常
  * @Author: 那个小楠瓜
  * @create: 2022-02-25 13:13
  **/

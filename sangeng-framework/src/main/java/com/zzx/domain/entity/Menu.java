@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 /**
  * 菜单权限表(Menu)表实体类
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-08-24 14:14:59
  */
 @SuppressWarnings("serial")

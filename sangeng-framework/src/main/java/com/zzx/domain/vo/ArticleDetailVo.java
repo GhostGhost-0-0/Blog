@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 前台博文详情 vo
  * @Author: 那个小楠瓜
  * @create: 2022-02-24 13:57
  **/

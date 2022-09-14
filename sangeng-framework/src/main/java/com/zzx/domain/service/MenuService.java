@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 菜单权限表(Menu)表服务接口
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-08-24 14:15:03
  */
 public interface MenuService extends IService<Menu> {

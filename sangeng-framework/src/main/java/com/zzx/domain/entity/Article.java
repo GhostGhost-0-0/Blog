@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 文章表(Article)表实体类
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-23 13:53:47
  */
 @Data

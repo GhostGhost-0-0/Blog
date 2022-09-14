@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 在添加和更新数据时自动填充内容
  * @Author: 那个小楠瓜
  * @create: 2022-03-02 14:17
  **/

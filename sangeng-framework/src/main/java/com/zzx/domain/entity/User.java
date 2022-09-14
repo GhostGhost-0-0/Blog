@@ -2,7 +2,6 @@ package com.zzx.domain.entity;
 
 import java.util.Date;
 
-
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +10,7 @@ import lombok.NoArgsConstructor;
 /**
  * 用户表(User)表实体类
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-24 15:06:20
  */
 @SuppressWarnings("serial")

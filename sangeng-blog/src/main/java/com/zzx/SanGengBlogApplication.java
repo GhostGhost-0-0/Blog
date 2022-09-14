@@ -9,7 +9,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 前台入口
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 13:32
  **/

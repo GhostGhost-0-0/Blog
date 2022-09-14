@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 博文业务实现类
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 14:04
  **/

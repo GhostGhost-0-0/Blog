@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * @BelongPackage: com.zzx.controller
  * @Author: 那个小楠瓜
  * @CreateTime: 2022-08-30 14:48
- * @Description: TODO
+ * @Description: 友链接口
  * @Version: 1.0
  */
 @RestController

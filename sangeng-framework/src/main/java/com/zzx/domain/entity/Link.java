@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 /**
  * 友链(SgLink)表实体类
  *
- * @author makejava
+ * @author 那个小楠瓜
  * @since 2022-02-24 14:28:26
  */
 @SuppressWarnings("serial")

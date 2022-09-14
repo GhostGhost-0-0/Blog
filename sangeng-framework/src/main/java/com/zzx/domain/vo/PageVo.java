@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 分页 vo
  * @Author: 那个小楠瓜
  * @create: 2022-02-23 19:37
  **/

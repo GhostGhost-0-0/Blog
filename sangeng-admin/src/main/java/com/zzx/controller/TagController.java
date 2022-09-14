@@ -3,18 +3,11 @@ package com.zzx.controller;
 import com.zzx.annotation.SystemLog;
 import com.zzx.domain.ResponseResult;
 import com.zzx.domain.dto.TagListDto;
-import com.zzx.domain.entity.Tag;
-import com.zzx.domain.entity.excel.TagExcel;
 import com.zzx.domain.service.TagService;
-import com.zzx.domain.service.impl.ExportExcelService;
-import com.zzx.utils.BeanCopyUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * @BelongProject: SGBlog
@@ -31,9 +24,6 @@ public class TagController {
 
     @Autowired
     private TagService tagService;
-
-    @Autowired
-    private ExportExcelService exportExcelService;
 
     @GetMapping("/list")
     @SystemLog(businessName = "获取分页标签列表")

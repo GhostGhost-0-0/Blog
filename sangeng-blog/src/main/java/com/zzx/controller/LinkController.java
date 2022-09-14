@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @program: SGBlog
- * @Description
+ * @Description 前台友链接口
  * @Author: 那个小楠瓜
  * @create: 2022-02-24 14:27
  **/
