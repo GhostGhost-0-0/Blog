@@ -1,37 +1,14 @@
 # SGBlog
 
 #### 介绍
-个人博客系统
+这是一个个人博客系统，有前台和后台两个系统，写这个项目的目的是加深对 Spring 系框架的理解和使用，主要目的还是学习如何开发一个项目
 
 #### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+- Java 版本：JDK 1.8
+- 基础框架：SpringBoot 2.5.0
+- ORM 框架：Mybatis-plus
+- Web 框架：Spring-MVC
+- 安全框架：SpringSecurity
+- 接口文档：Swagger2
+- 中间件：Redis
+- Excel：EasyExcel
