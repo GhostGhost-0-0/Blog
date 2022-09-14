@@ -29,6 +29,8 @@ public class Menu  {
 
     //菜单名称
     private String menuName;
+    @TableField(exist = false)
+    private String label;
     //父菜单ID
     private Long parentId;
     //显示顺序
