@@ -16,6 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @MapperScan("com.zzx.domain.mapper")
 @EnableSwagger2
+@EnableScheduling
 public class SanGengBlogApplication {
 
     public static void main(String[] args) {
