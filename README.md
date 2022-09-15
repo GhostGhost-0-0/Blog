@@ -8,6 +8,7 @@
 - 基础框架：SpringBoot 2.5.0
 - ORM 框架：Mybatis-plus
 - Web 框架：Spring-MVC
+- 数据库：MySQL 8.0
 - 安全框架：SpringSecurity
 - 接口文档：Swagger2
 - 中间件：Redis
